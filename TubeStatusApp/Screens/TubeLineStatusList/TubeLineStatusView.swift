@@ -52,14 +52,13 @@ struct TubeLineStatusView: View {
                                 .lineLimit(2) // Limiting the number of lines with 2 at Max
                                 .accessibilityHint("The name of the tube which is \(tubeLine.lineName)")
                                 .accessibilityLabel(tubeLine.lineName) // Tube name for VoiceOver
-                                .foregroundColor(colorScheme == .dark ? Color.black : Color.white) // Handling dark or light mode
+                                .foregroundColor(colorScheme == .dark ? Color.black : Color.primary) // Handling dark or light mode
                             
                             Spacer(minLength: 10) // to create a min distant
                             Text(tubeLine.lineStatus.description) //status
                                 .foregroundColor(tubeLine.lineStatus.color) // color of the status
                                 .accessibilityHint("The status of the tube which states \(tubeLine.lineName) is \(tubeLine.lineStatus.description)")
                                 .accessibilityLabel(tubeLine.lineStatus.description) // Status info for VoiceOver
-                            
                         }
                         .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                         .background(Color.white) // white background - readability
