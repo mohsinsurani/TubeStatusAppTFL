@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		840A7E932AFB9F8600726367 /* TubeStatusAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7E922AFB9F8600726367 /* TubeStatusAppApp.swift */; };
-		840A7E952AFB9F8600726367 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7E942AFB9F8600726367 /* ContentView.swift */; };
+		840A7E932AFB9F8600726367 /* TubeStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7E922AFB9F8600726367 /* TubeStatusApp.swift */; };
+		840A7E952AFB9F8600726367 /* TubeLineStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7E942AFB9F8600726367 /* TubeLineStatusView.swift */; };
 		840A7E972AFB9F8A00726367 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840A7E962AFB9F8A00726367 /* Assets.xcassets */; };
 		840A7E9A2AFB9F8A00726367 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 840A7E992AFB9F8A00726367 /* Preview Assets.xcassets */; };
 		840A7EA42AFB9F8A00726367 /* TubeStatusAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EA32AFB9F8A00726367 /* TubeStatusAppTests.swift */; };
 		840A7EAE2AFB9F8A00726367 /* TubeStatusAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EAD2AFB9F8A00726367 /* TubeStatusAppUITests.swift */; };
 		840A7EB02AFB9F8A00726367 /* TubeStatusAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EAF2AFB9F8A00726367 /* TubeStatusAppUITestsLaunchTests.swift */; };
+		840A7EBE2AFBB16400726367 /* TubeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EBD2AFBB16400726367 /* TubeListViewModel.swift */; };
+		840A7EC02AFBEC4600726367 /* TubeLineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EBF2AFBEC4600726367 /* TubeLineInteractor.swift */; };
+		840A7EC22AFCE4BB00726367 /* TubeLineModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EC12AFCE4BB00726367 /* TubeLineModels.swift */; };
+		840A7EC42AFCFBB700726367 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EC32AFCFBB700726367 /* Credentials.swift */; };
+		84A063992AFFBAB100A12503 /* TubeLineInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EBF2AFBEC4600726367 /* TubeLineInteractor.swift */; };
+		84A0639A2AFFCDAB00A12503 /* TubeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EBD2AFBB16400726367 /* TubeListViewModel.swift */; };
+		84A0639B2AFFCDB200A12503 /* TubeLineStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0062AFEE9C0002D39AB /* TubeLineStatusProtocol.swift */; };
+		84A0639C2AFFCDC400A12503 /* TFLDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B00C2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift */; };
+		84A0639D2AFFCDCF00A12503 /* TubeLineModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EC12AFCE4BB00726367 /* TubeLineModels.swift */; };
+		84A0639E2AFFCDD500A12503 /* TFLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0082AFEEA84002D39AB /* TFLDataService.swift */; };
+		84A0639F2AFFCDEA00A12503 /* APIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0102AFEFD76002D39AB /* APIURLBuilder.swift */; };
+		84A063A02AFFCE0A00A12503 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A7EC32AFCFBB700726367 /* Credentials.swift */; };
+		84A063A12AFFCE0D00A12503 /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B00A2AFEED59002D39AB /* APIEndPoints.swift */; };
+		84D2B0072AFEE9C0002D39AB /* TubeLineStatusProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0062AFEE9C0002D39AB /* TubeLineStatusProtocol.swift */; };
+		84D2B0092AFEEA84002D39AB /* TFLDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0082AFEEA84002D39AB /* TFLDataService.swift */; };
+		84D2B00B2AFEED59002D39AB /* APIEndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B00A2AFEED59002D39AB /* APIEndPoints.swift */; };
+		84D2B00D2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B00C2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift */; };
+		84D2B0112AFEFD76002D39AB /* APIURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D2B0102AFEFD76002D39AB /* APIURLBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +53,8 @@
 
 /* Begin PBXFileReference section */
 		840A7E8F2AFB9F8600726367 /* TubeStatusApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TubeStatusApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		840A7E922AFB9F8600726367 /* TubeStatusAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeStatusAppApp.swift; sourceTree = "<group>"; };
-		840A7E942AFB9F8600726367 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		840A7E922AFB9F8600726367 /* TubeStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeStatusApp.swift; sourceTree = "<group>"; };
+		840A7E942AFB9F8600726367 /* TubeLineStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineStatusView.swift; sourceTree = "<group>"; };
 		840A7E962AFB9F8A00726367 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		840A7E992AFB9F8A00726367 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		840A7E9F2AFB9F8A00726367 /* TubeStatusAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TubeStatusAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +62,15 @@
 		840A7EA92AFB9F8A00726367 /* TubeStatusAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TubeStatusAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840A7EAD2AFB9F8A00726367 /* TubeStatusAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeStatusAppUITests.swift; sourceTree = "<group>"; };
 		840A7EAF2AFB9F8A00726367 /* TubeStatusAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeStatusAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		840A7EBD2AFBB16400726367 /* TubeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeListViewModel.swift; sourceTree = "<group>"; };
+		840A7EBF2AFBEC4600726367 /* TubeLineInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineInteractor.swift; sourceTree = "<group>"; };
+		840A7EC12AFCE4BB00726367 /* TubeLineModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineModels.swift; sourceTree = "<group>"; };
+		840A7EC32AFCFBB700726367 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		84D2B0062AFEE9C0002D39AB /* TubeLineStatusProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineStatusProtocol.swift; sourceTree = "<group>"; };
+		84D2B0082AFEEA84002D39AB /* TFLDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLDataService.swift; sourceTree = "<group>"; };
+		84D2B00A2AFEED59002D39AB /* APIEndPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndPoints.swift; sourceTree = "<group>"; };
+		84D2B00C2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TFLDataServiceProtocol.swift; sourceTree = "<group>"; };
+		84D2B0102AFEFD76002D39AB /* APIURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIURLBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +121,11 @@
 		840A7E912AFB9F8600726367 /* TubeStatusApp */ = {
 			isa = PBXGroup;
 			children = (
-				840A7E922AFB9F8600726367 /* TubeStatusAppApp.swift */,
-				840A7E942AFB9F8600726367 /* ContentView.swift */,
+				84D2B0132AFEFFC5002D39AB /* Models */,
+				84D2B00F2AFEF0A6002D39AB /* Configurations */,
+				84D2B00E2AFEF07C002D39AB /* Services */,
+				840A7EBC2AFBA84700726367 /* Screens */,
+				840A7E922AFB9F8600726367 /* TubeStatusApp.swift */,
 				840A7E962AFB9F8A00726367 /* Assets.xcassets */,
 				840A7E982AFB9F8A00726367 /* Preview Content */,
 			);
@@ -125,6 +155,52 @@
 				840A7EAF2AFB9F8A00726367 /* TubeStatusAppUITestsLaunchTests.swift */,
 			);
 			path = TubeStatusAppUITests;
+			sourceTree = "<group>";
+		};
+		840A7EBC2AFBA84700726367 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				84D2B0122AFEFF7C002D39AB /* TubeLineStatusList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		84D2B00E2AFEF07C002D39AB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				84D2B0082AFEEA84002D39AB /* TFLDataService.swift */,
+				84D2B00C2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		84D2B00F2AFEF0A6002D39AB /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				840A7EC32AFCFBB700726367 /* Credentials.swift */,
+				84D2B00A2AFEED59002D39AB /* APIEndPoints.swift */,
+				84D2B0102AFEFD76002D39AB /* APIURLBuilder.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		84D2B0122AFEFF7C002D39AB /* TubeLineStatusList */ = {
+			isa = PBXGroup;
+			children = (
+				840A7E942AFB9F8600726367 /* TubeLineStatusView.swift */,
+				840A7EBD2AFBB16400726367 /* TubeListViewModel.swift */,
+				840A7EBF2AFBEC4600726367 /* TubeLineInteractor.swift */,
+				84D2B0062AFEE9C0002D39AB /* TubeLineStatusProtocol.swift */,
+			);
+			path = TubeLineStatusList;
+			sourceTree = "<group>";
+		};
+		84D2B0132AFEFFC5002D39AB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				840A7EC12AFCE4BB00726367 /* TubeLineModels.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +333,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				840A7E952AFB9F8600726367 /* ContentView.swift in Sources */,
-				840A7E932AFB9F8600726367 /* TubeStatusAppApp.swift in Sources */,
+				840A7E952AFB9F8600726367 /* TubeLineStatusView.swift in Sources */,
+				840A7EBE2AFBB16400726367 /* TubeListViewModel.swift in Sources */,
+				84D2B0072AFEE9C0002D39AB /* TubeLineStatusProtocol.swift in Sources */,
+				840A7EC02AFBEC4600726367 /* TubeLineInteractor.swift in Sources */,
+				84D2B00D2AFEEDD6002D39AB /* TFLDataServiceProtocol.swift in Sources */,
+				840A7EC42AFCFBB700726367 /* Credentials.swift in Sources */,
+				84D2B00B2AFEED59002D39AB /* APIEndPoints.swift in Sources */,
+				840A7E932AFB9F8600726367 /* TubeStatusApp.swift in Sources */,
+				84D2B0092AFEEA84002D39AB /* TFLDataService.swift in Sources */,
+				84D2B0112AFEFD76002D39AB /* APIURLBuilder.swift in Sources */,
+				840A7EC22AFCE4BB00726367 /* TubeLineModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +351,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A0639F2AFFCDEA00A12503 /* APIURLBuilder.swift in Sources */,
+				84A0639E2AFFCDD500A12503 /* TFLDataService.swift in Sources */,
+				84A063A12AFFCE0D00A12503 /* APIEndPoints.swift in Sources */,
+				84A063A02AFFCE0A00A12503 /* Credentials.swift in Sources */,
+				84A0639D2AFFCDCF00A12503 /* TubeLineModels.swift in Sources */,
+				84A063992AFFBAB100A12503 /* TubeLineInteractor.swift in Sources */,
+				84A0639C2AFFCDC400A12503 /* TFLDataServiceProtocol.swift in Sources */,
+				84A0639A2AFFCDAB00A12503 /* TubeListViewModel.swift in Sources */,
+				84A0639B2AFFCDB200A12503 /* TubeLineStatusProtocol.swift in Sources */,
 				840A7EA42AFB9F8A00726367 /* TubeStatusAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
