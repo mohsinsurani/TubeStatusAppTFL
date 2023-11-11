@@ -59,7 +59,6 @@ BackendTest methods are written in `TubeStatusAppTests` file
 
 **Any Relevant Inputs?**
  - It was fun and exciting to work on this project and get to learn many things.
- - I've added accessibility and tried to adjust the contrast of colors according to requirements.
  - Tried to use maximum of enums, struct, combine and protocols to support the protocol-oriented reactive approach.
  - Created a few folders as so to decrease the burden of all logics and it can be splitted in various forms.
  - If the tube status is `"Good service"` then Its font color is shown `green`, else different colors were shown such as `red, blue, black and yellow`.
