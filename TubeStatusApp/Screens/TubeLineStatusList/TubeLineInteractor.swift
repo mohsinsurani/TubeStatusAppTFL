@@ -2,8 +2,10 @@
 //  TubeInteractor.swift
 //  TubeStatusApp
 //
-//  Created by Admin on 08/11/2023.
+//  Created by Admin on 09/11/2023.
 //
+// This interactor handles all operations of TubeLineStatusView
+// Protcols - TubeLineStatusProtocol & TFLDataServiceProtocol
 
 import Foundation
 import Combine
@@ -12,15 +14,18 @@ class TubeLineInteractor: TubeLineStatusProtocol {
     private var cancellables: Set<AnyCancellable> = []
     private let tubeDataSubject = PassthroughSubject<[TubeListViewModel], Error>()
     
+    //publisher for transmitting data
     var tubeDataPublisher: AnyPublisher<[TubeListViewModel], Error> {
         return tubeDataSubject.eraseToAnyPublisher()
     }
         
     private let tubeDataService: TFLDataServiceProtocol
     
+    // Managing the dependency
     init(tubeDataService: TFLDataServiceProtocol = TubeDataFetcher()) {
         self.tubeDataService = tubeDataService
     }
+    
     // Function to fetch tube data from the API
     func fetchTubeData() {
         tubeDataService.fetchTubeData()
@@ -28,17 +33,18 @@ class TubeLineInteractor: TubeLineStatusProtocol {
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    // Handle finished state if needed
                     break
                 case .failure(let error):
                     self.tubeDataSubject.send(completion: .failure(error))
                 }
             }, receiveValue: { tubeData in
+                // Sending the data back to View
                 self.tubeDataSubject.send(tubeData.toViewModels())
             })
             .store(in: &cancellables)
     }
     
+    //refresh the data and adding delays to handle simultaneous clicks
     func refreshData() {
         // Simulate a delay for demonstration purposes
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {

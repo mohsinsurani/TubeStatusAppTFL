@@ -2,7 +2,7 @@
 //  TubeStatusAppApp.swift
 //  TubeStatusApp
 //
-//  Created by Admin on 08/11/2023.
+//  Created by Admin on 09/11/2023.
 //
 
 import SwiftUI
@@ -11,6 +11,7 @@ import SwiftUI
 struct TubeStatusApp: App {
     var body: some Scene {
         WindowGroup {
+            // Acts as first screen of the app
             TubeLineStatusView()
         }
     }

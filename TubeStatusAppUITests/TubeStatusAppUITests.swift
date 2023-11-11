@@ -2,8 +2,9 @@
 //  TubeStatusAppUITests.swift
 //  TubeStatusAppUITests
 //
-//  Created by Admin on 08/11/2023.
+//  Created by Admin on 10/11/2023.
 //
+// This class contains all the VIew test cases
 
 import XCTest
 
@@ -24,31 +25,15 @@ final class TubeStatusAppUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    // testing the data existence in View
     func testData() throws {
         // Access the app
         let loadedListItem = app.staticTexts["Bakerloo"] // Replace with an actual line name
                 
         // Wait for a reasonable amount of time for the data to load
-        sleep(10)
+        sleep(5)
                 
         // Verify that a specific list item is present, indicating data is loaded
         XCTAssertTrue(loadedListItem.exists, "Data not loaded. Expected list item not found")
-    }
-    
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
     }
 }

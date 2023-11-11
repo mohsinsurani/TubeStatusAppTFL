@@ -4,6 +4,7 @@
 //
 //  Created by Admin on 11/11/2023.
 //
+// This class appends credentials required by the API
 
 import Foundation
 
@@ -12,6 +13,7 @@ protocol URLBuilder {
     func buildURL(using builder: String) -> URL?
 }
 
+//extending the protocol methods to append credentials
 extension URLBuilder {
     func buildURL(using builder: String) -> URL? {
         var query = URLComponents(string: builder)
@@ -27,6 +29,7 @@ extension URLBuilder {
     }
 }
 
+//Build and Return the URL with Credentials
 struct TFLAPI: URLBuilder {
     func buildTubeStatusURL() -> URL? {
         let tubeURL = TFLBase.url.rawValue + Line.mode.rawValue + Tube.status.rawValue

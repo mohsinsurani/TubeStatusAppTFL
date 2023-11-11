@@ -2,18 +2,21 @@
 //  TubeListViewModel.swift
 //  TubeStatusApp
 //
-//  Created by Admin on 08/11/2023.
+//  Created by Admin on 10/11/2023.
 //
+// This class represents the viewmodel of the TubeLineStatusView
 
 import Foundation
 import SwiftUI
 
+// TubeListModel
 struct TubeListViewModel {
     var lineName: String
     var lineUniqueColor: TubeColors
     var lineStatus: TubeLineStatus
 }
 
+// Tube Color Rectangular Bars based on different Lines
 enum TubeColors: String {
     case metropolitan = "metropolitan"
     case northern = "northern"
@@ -44,6 +47,7 @@ enum TubeColors: String {
     }
 }
 
+// Different Status Colors based on different Status codes
 enum TubeLineStatus: Int {
     case specialService = 0
     case closed = 1

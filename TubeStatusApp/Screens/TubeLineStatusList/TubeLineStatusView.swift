@@ -1,3 +1,11 @@
+//
+//  TubeLineStatusView.swift
+//  TubeStatusApp
+//
+//  Created by Admin on 10/11/2023.
+//
+// This View Displays the list of the tube and status
+
 import SwiftUI
 import Combine
 
@@ -5,11 +13,12 @@ struct TubeLineStatusView: View {
     @State private var tubeLines: [TubeListViewModel] = []
     @State private var errorMessage: String?
     @State private var isRefreshing = false
+    @Environment(\.colorScheme) var colorScheme
 
-    // Create an instance of TubeDataInteractor
+    // Instance of TubeDataInteractor which handles operations for UI
     private let tubeDataInteractor = TubeLineInteractor()
     
-    // Use a cancellable to store the Combine subscription
+    // cancellable to store the Combine subscription
     @State private var cancellable: AnyCancellable?
     
     var body: some View {
@@ -19,15 +28,16 @@ struct TubeLineStatusView: View {
                     ProgressView()
                         .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                         .padding()
-                        .accessibilityLabel("Loading") // Provide a label for VoiceOver
+                        .accessibilityLabel("Loading the data") // Voiceover information
                 }
-                if let errorMsg = errorMessage, !errorMsg.isEmpty {
+                if let errorMsg = errorMessage, !errorMsg.isEmpty { //unwraping safely
                     Text(errorMsg)
                         .foregroundColor(.red)
                         .padding()
-                        .accessibilityLabel(errorMsg) // Provide a label for VoiceOver
+                        .accessibilityLabel(errorMsg) // VoiceOver error message information
                 }
                 
+                //List containing all values
                 List(tubeLines, id: \.lineName) { tubeLine in
                     HStack {
                         Rectangle()
@@ -38,60 +48,63 @@ struct TubeLineStatusView: View {
                         HStack {
                             Text(tubeLine.lineName)
                                 .font(Font.custom("Arial", size: 20))
-                                .minimumScaleFactor(0.3) // Adjust the scale factor as needed
-                                .lineLimit(2) // Specify the maximum number of lines (optional)
+                                .minimumScaleFactor(0.3) // Scaling as per need
+                                .lineLimit(2) // Limiting the number of lines with 2 at Max
                                 .accessibilityHint("The name of the tube which is \(tubeLine.lineName)")
-                                .accessibilityLabel(tubeLine.lineName) // Provide a label for VoiceOver
-                                .foregroundColor(Color.primary) // Ensure sufficient contrast for text
+                                .accessibilityLabel(tubeLine.lineName) // Tube name for VoiceOver
+                                .foregroundColor(colorScheme == .dark ? Color.black : Color.white) // Handling dark or light mode
                             
-                            Spacer(minLength: 10)
-                            Text(tubeLine.lineStatus.description)
-                                .foregroundColor(tubeLine.lineStatus.color)
+                            Spacer(minLength: 10) // to create a min distant
+                            Text(tubeLine.lineStatus.description) //status
+                                .foregroundColor(tubeLine.lineStatus.color) // color of the status
                                 .accessibilityHint("The status of the tube which states \(tubeLine.lineName) is \(tubeLine.lineStatus.description)")
-                                .accessibilityLabel(tubeLine.lineStatus.description) // Provide a label for VoiceOver
+                                .accessibilityLabel(tubeLine.lineStatus.description) // Status info for VoiceOver
                             
                         }
                         .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                        .background(Color.white) // Add a white background for better readability
+                        .background(Color.white) // white background - readability
                         .cornerRadius(8)
                         .shadow(radius: 2) // Depth shadow
                     }
                     .frame(maxWidth: .infinity, alignment: .leading) // Confirming HStack - the full width
                     .accessibilityElement(children: .combine) // Combine child elements for VoiceOver
                 }
-                .refreshable {
+                .refreshable { //pull to refresh on List
                     await refreshData()
                 }
-                .navigationTitle("Tube Line Status")
-                .accessibilityLabel("Here are the status of Tubes") // Provide a label for VoiceOver
+                .navigationTitle("Tube Line Status") // Navigation title
+                .accessibilityLabel("Here are the status of Tubes") // Nav Title for VoiceOver
             }
         }
         .onAppear {
-            isRefreshing = true
-            // Fetch tube data when the view appears
+            isRefreshing = true // to show progress view for loading the data
+            
+            // Subscribe to publisher
             cancellable = tubeDataInteractor.tubeDataPublisher
                 .sink(receiveCompletion: { completion in
                     if case .failure(let error) = completion {
+                        self.isRefreshing = false //hide the progress when error occurs
                         errorMessage = error.localizedDescription
                     }
                 }, receiveValue: { data in
                     self.isRefreshing = false
-                    tubeLines = data
+                    tubeLines = data  //assign the data from publisher
                 })
             
-            // Initiate the API request
+            // Initiate the API request to Interactor
             tubeDataInteractor.fetchTubeData()
         }
         .onDisappear {
             cleanup()
         }
-        .foregroundColor(Color.primary) // Ensure sufficient contrast for text
+        .foregroundColor(Color.primary)
     }
     
+    // Refresh the data on pull to refresh
     private func refreshData() async {
-        // Update the state variable to stop the refreshing animation
         tubeDataInteractor.refreshData()
     }
+    
     // Clean up the subscription when the view disappears
     private func cleanup() {
         cancellable?.cancel()
@@ -105,17 +118,8 @@ struct TubeLineStatusView_Previews: PreviewProvider {
 }
 
 extension UIColor {
+    // Convert UIColor to Color
     var toSUIColor: Color {
         Color(self)
-    }
-}
-
-extension View {
-    @ViewBuilder func isHidden(_ isHidden: Bool) -> some View {
-        if isHidden {
-            self.hidden()
-        } else {
-            self
-        }
     }
 }

@@ -2,8 +2,9 @@
 //  TubeStatusAppTests.swift
 //  TubeStatusAppTests
 //
-//  Created by Admin on 08/11/2023.
+//  Created by Admin on 09/11/2023.
 //
+// Business Logic Test of this app
 
 import XCTest
 import Combine
@@ -22,6 +23,7 @@ final class TubeStatusAppTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
+    // Testing the expected data from API
     func testFetchTubeData() {
         let expectation = XCTestExpectation(description: "Fetch Tube Data")
         
@@ -43,6 +45,7 @@ final class TubeStatusAppTests: XCTestCase {
         wait(for: [expectation], timeout: 10.0)
     }
     
+    // Testing the performance of the API
     func testAPICallPerformance() {
         // This measures the performance of your API call
         measure {
@@ -66,6 +69,7 @@ final class TubeStatusAppTests: XCTestCase {
         }
     }
     
+    // Testing the basic latency of the API
     func testbasicLatency() {
         let expectation = XCTestExpectation(description: "Check latency")
         
@@ -92,6 +96,7 @@ final class TubeStatusAppTests: XCTestCase {
         
     }
     
+    // clearing the AnyCancellable
     override func tearDown() {
         cancellables.removeAll()
         super.tearDown()
