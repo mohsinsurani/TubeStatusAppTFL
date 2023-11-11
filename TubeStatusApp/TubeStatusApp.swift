@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct TubeStatusAppApp: App {
+struct TubeStatusApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TubeLineStatusView()
         }
     }
 }
