@@ -1,7 +1,7 @@
 
-# TubeStatusAppTFL
+# TubeStatusApp
 
-TubeStatusAppTFL is a native iOS application designed to provide real-time information on the status of all London Tube lines. Built using Swift as the primary language and SwiftUI as the frontend framework, the app offers a user-friendly interface for users to stay informed about the operational status of each Tube line.
+TubeStatusApp is a native iOS application designed to provide real-time information on the status of all TFL London Tube lines. Built using Swift as the primary language and SwiftUI as the frontend framework, the app offers a user-friendly interface for users to stay informed about the operational status of each Tube line.
 
 **Key Features:**
 
@@ -54,7 +54,7 @@ BackendTest methods are written in `TubeStatusAppTests` file
  - No Extra Frameworks were used.
  - My old Macbook doesn't contain USB-C Port so was unable to test this app on iPhone device.
  - The application assumes the continuous availability of the TFL API for retrieving real-time Tube status information.
- - No offline storage of any tubes information was saved.
+ - No offline storage of any tubes information.
  - This app currently only support iPhone models.
 
 **Any Relevant Inputs?**
