@@ -29,6 +29,7 @@ class TubeLineInteractor: TubeLineStatusProtocol {
     // Function to fetch tube data from the API
     func fetchTubeData() {
         tubeDataService.fetchTubeData()
+            .subscribe(on: DispatchQueue.global(qos: .userInitiated)) // as data needs to display urgent
             .receive(on: DispatchQueue.main) // Switch to the main thread to update UI
             .sink(receiveCompletion: { completion in
                 switch completion {
