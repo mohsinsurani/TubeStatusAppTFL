@@ -101,7 +101,9 @@ struct TubeLineStatusView: View {
     
     // Refresh the data on pull to refresh
     private func refreshData() async {
-        tubeDataInteractor.refreshData()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.tubeDataInteractor.fetchTubeData()
+        }
     }
     
     // Clean up the subscription when the view disappears

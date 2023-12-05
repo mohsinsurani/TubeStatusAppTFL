@@ -44,14 +44,6 @@ class TubeLineInteractor: TubeLineStatusProtocol {
             })
             .store(in: &cancellables)
     }
-    
-    //refresh the data and adding delays to handle simultaneous clicks
-    func refreshData() {
-        // Simulate a delay for demonstration purposes
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.fetchTubeData()
-        }
-    }
 }
 
 // Define custom errors

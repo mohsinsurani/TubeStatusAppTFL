@@ -13,5 +13,4 @@ import Combine
 protocol TubeLineStatusProtocol {
     var tubeDataPublisher: AnyPublisher<[TubeListViewModel], Error> { get }
     func fetchTubeData()
-    func refreshData()
 }
